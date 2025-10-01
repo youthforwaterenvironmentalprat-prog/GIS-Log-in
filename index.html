@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIS for Africa - Login</title>
+    <!-- Basic styling for a professional look -->
+    <style>
+        body { font-family: Arial, sans-serif; background: #f0f0f0; text-align: center; padding: 50px; }
+        .login-box { background: white; padding: 20px; width: 300px; margin: auto; border: 1px solid #ccc; border-radius: 5px; }
+        h2 { color: #005566; }
+        input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 3px; }
+        button { padding: 10px; background: #005566; color: white; border: none; border-radius: 3px; width: 100%; cursor: pointer; }
+        button:hover { background: #003d4c; }
+        .success { color: green; display: none; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <!-- Login form container -->
+    <div class="login-box">
+        <h2>🌍 GIS for Africa</h2>
+        <p>Log in to access GIS tools</p>
+        <form id="loginForm">
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Sign In</button>
+        </form>
+        <p class="success" id="successMsg">Login successful! Check your email.</p>
+    </div>
+
+    <!-- JavaScript to capture and log credentials -->
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent form from refreshing
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            console.log('Email:', email, 'Password:', password); // Logs to browser console (F12)
+            document.getElementById('loginForm').style.display = 'none'; // Hide form
+            document.getElementById('successMsg').style.display = 'block'; // Show success message
+        });
+    </script>
+</body>
+</html>
